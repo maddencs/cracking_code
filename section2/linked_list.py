@@ -15,6 +15,13 @@ class LinkedList:
                 current = current.next
             current.next = node
 
+    def prepend(self, node):
+        if not self.head:
+            self.head = node
+        else:
+            node.next = self.head
+            self.head = node
+
     def print(self):
         current = self.head
         while current:
@@ -47,4 +54,14 @@ if __name__ == '__main__':
     ll.print()
 
     print(ll.to_list())
+
+
+    prepend_test = [1, 2, 3, 4]
+
+    ll = LinkedList()
+    for i in prepend_test:
+        ll.prepend(Node(i))
+
+    assert ll.to_list() == list(reversed(prepend_test))
+
 
