@@ -63,5 +63,3 @@ if __name__ == '__main__':
         ll.prepend(Node(i))
 
     assert ll.to_list() == list(reversed(prepend_test))
-
-

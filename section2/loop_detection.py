@@ -24,6 +24,3 @@ tail.next = loop_node_start
 
 detected_loop_start = loop_detection(ll)
 assert detected_loop_start == loop_node_start
-
-
-
