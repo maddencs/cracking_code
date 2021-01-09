@@ -1,6 +1,7 @@
 import pytest
 
 from section3.stack import Stack, Node
+from section3.stack_sort import StackSort
 
 
 class TestStack:
@@ -46,4 +47,7 @@ class TestStack:
         for i in unsorted_list:
             self.stack.push(Node(i))
 
-        sort_stack(self.stack)
+        StackSort().sort(self.stack)
+
+        sorted_to_list = self.stack.to_list()
+        assert sorted_to_list == sorted_list

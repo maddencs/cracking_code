@@ -6,22 +6,25 @@ class Stack:
 
     def pop(self):
         tmp = self.top
-        self.top = self.top.next
+        if self.top is not None:
+            self.top = self.top.next
+
         return tmp
 
     def push(self, node):
         node.next = self.top
         self.top = node
-        print()
 
     def is_empty(self):
         return self.top is None
 
     def to_list(self):
         as_list = list()
-        while not self.is_empty():
-            data = self.pop().data
+        current = self.top
+        while current:
+            data = current.data
             as_list.append(data)
+            current = current.next
 
         return as_list
 
